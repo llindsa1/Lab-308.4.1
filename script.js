@@ -77,5 +77,60 @@ for (let i in string) {
   }
 
   let candidates = ['Bruce', 'Bob', 'Blaine', 'Bill']
-  
+
+  //Part 2
+const csvData = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+
+function parseCSV (csvString) {
+    const rows = csvString.split('\n')
+}
+
+const header = rows[0].split (',');
+const numColums = header.length;
+
+const dataArray = [header];
+
+for (let i= 1; i < rows.length; i++) {
+    const row = rows[i].split(',');
+
+    if (row.length=== numColumns) { dataArray.push(row);}
+
+}
+
+return dataArray;
+const cachedData = parseCSV (csvData);
+
+console.log(cachedData); 
+
+// Part 3
+const csvDataArray = [
+["ID", "Name", "Occupation","Age"],
+["42", "Bruce", "Knight", "41"],
+["57", "Bob", "Fry Cook", "19"],
+["63", "Blaine", "Quiz Master", "58"]
+["98", "Bill" ,"Doctor’s Assistant", "26"]
+];
+
+function convertToObjects(dataArray) {
+    const headers =
+    dataArray[0].map(header =>
+        header.toLowerCase());
+        const result  = [];
+
+        for (let i= 1; i < dataArray.length; i++) {
+            const row = dataArray[i];
+            const obj = {};
+
+            headers.forEach ((header, index) =>
+            {
+                obj[header] = row [index];
+            });
+            result.push(obj);        }
+
+            return result;
+}
+
+const dataObjects = 
+convertToObjects(csvDataArray);
+console.log(dataObjects);
 
