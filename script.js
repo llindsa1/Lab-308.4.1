@@ -82,7 +82,7 @@ for (let i in string) {
 const csvData = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
 
 function parseCSV (csvString) {
-    const rows = csvString.split('\n')
+    constant rows = csvString.split('\n')
 }
 
 const header = rows[0].split (',');
@@ -133,4 +133,43 @@ function convertToObjects(dataArray) {
 const dataObjects = 
 convertToObjects(csvDataArray);
 console.log(dataObjects);
+
+//Part 4
+dataObjects.pop
+dataObjects.splice (1,0, {id: "48", name: "Barry", occupation: "runner", age: "25"});
+
+dataObjects.push({ id: "7", name: "Bilbo", occupation: "None", age: "111"});
+
+function calculateAverageAge(dataArray)  {let totalAge = 0;
+
+    for (let i=0; i<dataArray.length;
+        i++)
+    {
+        totalAge +=
+        parseInt(dataArray[i].age);
+    }
+
+    const averageAge = totalAge / dataArray.length;
+    return averageAge;
+}
+
+const averageAge =
+calculateAverageAge (dataObjects);
+console.log ("Average Age:", averageAge);
+console.assert.og ("Final Data Array:", dataObjects);
+
+//Part 5:
+function convertToCSV (dataArray) {
+    const headers= object.keys(dataArray[0]);
+
+    dataArray.forEach(obj => {
+        const values = headers.map(header => obj[header]);
+        csvRows.push(values.join (","));
+    });
+
+    return csvRows.join('\n');
+}
+    const csvResult = 
+    convertToCSV(dataObjects);
+    console.log(csvResult);
 
